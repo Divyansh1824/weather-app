@@ -53,8 +53,8 @@
         console.log(`Location: ${name}, ${country} [${latitude}, ${longitude}]`);
         const weatherRes = await fetch(`https://api.open-meteo.com/v1/forecast?latitude=${latitude}&longitude=${longitude}&current=temperature_2m,wind_speed_10m&hourly=temperature_2m,relative_humidity_2m,wind_speed_10m`);
         const weatherData = await weatherRes.json();
-        document.getElementById('current-temp').textContent = weatherData.current.temperature_2m;
-        document.getElementById('current-wind').textContent = weatherData.current.wind_speed_10m;
+        document.getElementById("current-temp").textContent = weatherData.current.temperature_2m;
+        document.getElementById("current-wind").textContent = weatherData.current.wind_speed_10m;
 
         // Display hourly forecast
         const table = document.getElementById('forecast-table');
@@ -66,7 +66,7 @@
           const humidity = weatherData.hourly.relative_humidity_2m[i];
           const wind = weatherData.hourly.wind_speed_10m[i];
 
-          row.innerHTML = `
+          row.innerHTML = 
             <td>${time}</td>
             <td>${temp}</td>
             <td>${humidity}</td>
